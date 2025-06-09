@@ -16,7 +16,7 @@ services:
       - app-network
 
   web:
-    image: localhost:5001/flask-api:${IMAGE_TAG:-latest}
+    image: 37.9.53.18:5001/flask-api:${IMAGE_TAG:-latest}
     container_name: flask_app
     environment:
       DB_HOST: db
