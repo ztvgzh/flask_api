@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         DOCKER_IMAGE = "localhost:5000/flask-api:${BUILD_NUMBER}"
-        DOCKER_REGISTRY = "37.9.53.18:5000"
+        DOCKER_REGISTRY = "localhost:5000"
         DOCKER_REPO = "flask-api"
         TARGET_HOST = "ubuntu@37.9.53.18"
         SSH_CREDENTIALS = "ssh-credentials"
