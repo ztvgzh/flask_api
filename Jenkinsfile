@@ -54,14 +54,13 @@ pipeline {
                 echo 'Pushing Docker image to registry...'
                 script {
                     def dockerImage = docker.image("${DOCKER_IMAGE}")
-                    docker.withRegistry("http://${DOCKER_REGISTRY}", 'docker-registry-credentials') {
+                    docker.withRegistry("http://${DOCKER_REGISTRY}") {  // Убрали credentials
                         dockerImage.push("${BUILD_NUMBER}")
                         dockerImage.push("latest")
                     }
                 }
             }
-        }
-        
+        }        
         stage('Deploy') {
             steps {
                 echo 'Deploying to target server...'
