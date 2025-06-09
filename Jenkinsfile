@@ -3,9 +3,9 @@ pipeline {
     
     environment {
         DOCKER_IMAGE = "flask-api:${BUILD_NUMBER}"
-        DOCKER_REGISTRY = "your-registry.com" // Замените на ваш registry
+        DOCKER_REGISTRY = "localhost:5001" 
         DOCKER_REPO = "flask-api"
-        TARGET_HOST = "your-target-server.com" // Замените на ваш целевой сервер
+        TARGET_HOST = "ubuntu@37.9.53.180" 
         SSH_CREDENTIALS = "ssh-credentials" // ID ваших SSH credentials в Jenkins
     }
     
