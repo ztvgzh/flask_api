@@ -14,29 +14,29 @@ def submit():
     """Submit new record"""
     try:
         data = request.get_json()
-        
+
         if not data:
             return jsonify({"error": "No JSON data provided"}), 400
-        
+
         name = data.get('name')
         score = data.get('score')
-        
+
         if not name or score is None:
             return jsonify({"error": "Name and score are required"}), 400
-        
+
         if not isinstance(score, int):
             return jsonify({"error": "Score must be an integer"}), 400
-        
+
         # Create new record
         record = Record(name=name, score=score)
         db.session.add(record)
         db.session.commit()
-        
+
         return jsonify({
             "message": "Record created successfully",
             "record": record.to_dict()
         }), 201
-        
+
     except Exception as e:
         db.session.rollback()
         return jsonify({"error": str(e)}), 500
