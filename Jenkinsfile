@@ -2,9 +2,7 @@ pipeline {
     agent any
     
     environment {
-        DOCKER_IMAGE = "localhost:5001/flask-api:${BUILD_NUMBER}"
-        DOCKER_REGISTRY = "localhost:5001"
-        DOCKER_REPO = "flask-api"
+        DOCKER_IMAGE = "flask-api:${BUILD_NUMBER}"
         TARGET_HOST = "ubuntu@37.9.53.18"
         SSH_CREDENTIALS = "ssh-credentials"
     }
