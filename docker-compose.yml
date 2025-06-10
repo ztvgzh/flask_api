@@ -16,14 +16,8 @@ services:
       - app-network
 
   web:
-    build: .
+    image: flask-api:${IMAGE_TAG}
     container_name: flask_app
-    environment:
-      DB_HOST: db
-      DB_PORT: 5432
-      DB_NAME: ${DB_NAME}
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
     ports:
       - "5000:5000"
     depends_on:
