@@ -16,7 +16,7 @@
 Откройте терминал и выполните следующую команду, чтобы клонировать репозиторий и перейти в его директорию:
 
 ```bash
-git clone [<URL-вашего-репозитория>](https://github.com/ztvgzh/flask_api)
+git clone https://github.com/ztvgzh/flask_api
 cd flask_api/
 ```
 
