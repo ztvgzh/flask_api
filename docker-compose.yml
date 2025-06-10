@@ -32,8 +32,6 @@ services:
       - .env
     networks:
       - app-network
-    volumes:
-      - .:/app
     restart: unless-stopped
 
 volumes:
